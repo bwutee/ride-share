@@ -13,20 +13,20 @@ class Driver extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: user,
                 join: {
-                    from: "driver.id",
-                    to: "user.id"
+                    from: "Driver.id",
+                    to: "User.id"
                 }
             },
             vehicles: {
                 relation: Model.ManyToManyRelation,
                 modelClass: vehicle,
                 join: {
-                    from: "driver.id",
+                    from: "Driver.id",
                     through: {
-                        from: "authorization.driverId",
-                        to: "authorization.vehicleId"
+                        from: "Authorization.driverId",
+                        to: "Authorization.vehicleId"
                     },
-                    to: "vehicle.id"
+                    to: "Vehicle.id"
                 }
                 
             },
@@ -34,12 +34,12 @@ class Driver extends Model {
                 relation: Model.ManyToManyRelation,
                 modelClass: ride,
                 join: {
-                    from: "driver.id",
+                    from: "Driver.id",
                     through: {
-                        from: "drivers.driverId",
-                        to: "drivers.rideID"
+                        from: "Drivers.driverId",
+                        to: "Drivers.rideID"
                     },
-                    to: "ride.id"
+                    to: "Ride.id"
                 }
                 
             },
@@ -47,8 +47,8 @@ class Driver extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: state,
                 join: {
-                    from: "driver.licenseState",
-                    to: "state.abbreviation"
+                    from: "Driver.licenseState",
+                    to: "State.abbreviation"
                 }
                 
             }

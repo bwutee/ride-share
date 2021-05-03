@@ -36,9 +36,10 @@ async function deleteData(){
 }
 //related Query
 async function relatedQuery(){
-    const drivers = await User.relatedQuery('driver')
-    .select()
-    .where('id', 1)
+    const drivers = await User.relatedQuery('driver').for(1);
+    console.log(drivers);
+    // .select()
+    // .where('id', 1)
 }
 //createData();
 //getUserQuery();

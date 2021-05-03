@@ -11,20 +11,20 @@ class User extends Model {
                 relation: Model.HasManyRelation,
                 modelClass: driver,
                 join: {
-                    from: 'user.id',
-                    to: 'driver.userId'
+                    from: 'User.id',
+                    to: 'Driver.userId'
                 }
             },
             ride: {
                 relation: Model.ManyToManyRelation,
                 modelClass: ride,
                 join: {
-                    from: 'user.id',
+                    from: 'User.id',
                     through: {
-                        from: 'passenger.userId',
-                        to: 'passenger.rideId'
+                        from: 'Passenger.userId',
+                        to: 'Passenger.rideId'
                     },
-                    to: 'ride.id'
+                    to: 'Ride.id'
                 }
                 
             }
