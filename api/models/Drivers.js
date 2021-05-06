@@ -11,16 +11,16 @@ class Drivers extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: driver,
                 join: {
-                    from: 'drivers.driverId',
-                    to: 'driver.id'
+                    from: 'Drivers.driverId',
+                    to: 'Driver.id'
                 }
             },
             ride: {
                 relation: Model.BelongsToOneRelation,
                 modelClass: ride,
                 join: {
-                    from: 'drivers.rideId',
-                    to: 'ride.id'
+                    from: 'Drivers.rideId',
+                    to: 'Ride.id'
                 }
                 
             }

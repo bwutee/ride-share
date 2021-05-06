@@ -11,16 +11,16 @@ class Location extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: state,
                 join: {
-                    from: 'location.state',
-                    to: 'state.abbreviation'
+                    from: 'Location.state',
+                    to: 'State.abbreviation'
                 }
             },
             ride: {
                 relation: Model.HasManyRelation,
                 modelClass: ride,
                 join: {
-                    from: 'location.id',
-                    to: 'ride.fromLocationId'
+                    from: 'Location.id',
+                    to: 'Ride.fromLocationId'
                 }
                 
             },
@@ -28,8 +28,8 @@ class Location extends Model {
                 relation: Model.HasManyRelation,
                 modelClass: ride,
                 join: {
-                    from: 'location.id',
-                    to: 'ride.toLocationId'
+                    from: 'Location.id',
+                    to: 'Ride.toLocationId'
                 }
                 
             }

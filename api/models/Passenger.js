@@ -11,16 +11,16 @@ class Passenger extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: user,
                 join: {
-                    from: 'passenger.userId',
-                    to: 'user.id'
+                    from: 'Passenger.userId',
+                    to: 'User.id'
                 }
             },
             ride: {
                 relation: Model.BelongsToOneRelation,
                 modelClass: ride,
                 join: {
-                    from: 'passenger.rideId',
-                    to: 'ride.id'
+                    from: 'Passenger.rideId',
+                    to: 'Ride.id'
                 }
                 
             }

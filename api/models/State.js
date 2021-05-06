@@ -11,16 +11,16 @@ class State extends Model {
                 relation: Model.HasManyRelation,
                 modelClass: driver,
                 join: {
-                    from: 'state.abbreviation',
-                    to: 'driver.licenseState'
+                    from: 'State.abbreviation',
+                    to: 'Driver.licenseState'
                 }
             },
             location: {
                 relation: Model.ManyToManyRelation,
                 modelClass: location,
                 join: {
-                    from: 'state.abbreviation',
-                    to: 'location.state'
+                    from: 'State.abbreviation',
+                    to: 'Location.state'
                 }
                 
             }

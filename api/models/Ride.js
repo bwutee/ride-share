@@ -13,24 +13,24 @@ class Ride extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: user,
                 join: {
-                    from: "ride.id",
+                    from: "Ride.id",
                     through: {
-                        from: "passenger.rideId",
-                        to: "passenger.userId"
+                        from: "Passenger.rideId",
+                        to: "Passenger.userId"
                     },
-                    to: "user.id"
+                    to: "User.id"
                 }
             },
             drivers: {
                 relation: Model.ManyToManyRelation,
                 modelClass: driver,
                 join: {
-                    from: "ride.id",
+                    from: "Ride.id",
                     through: {
-                        from: "drivers.rideId",
-                        to: "drivers.driverId"
+                        from: "Drivers.rideId",
+                        to: "Drivers.driverId"
                     },
-                    to: "driver.id"
+                    to: "Driver.id"
                 }
                 
             },
@@ -38,8 +38,8 @@ class Ride extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: vehicle,
                 join: {
-                    from: "ride.vehicleId",
-                    to: "vehicle.id"
+                    from: "Ride.vehicleId",
+                    to: "Vehicle.id"
                 }
                 
             },
@@ -47,8 +47,8 @@ class Ride extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: location,
                 join: {
-                    from: "ride.fromLocationId",
-                    to: "location.id"
+                    from: "Ride.fromLocationId",
+                    to: "Location.id"
                 }
                 
             },
@@ -56,8 +56,8 @@ class Ride extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: location,
                 join: {
-                    from: "ride.toLocationId",
-                    to: "location.id"
+                    from: "Ride.toLocationId",
+                    to: "Location.id"
                 }
                 
             }

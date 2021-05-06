@@ -11,16 +11,16 @@ class Authorization extends Model {
                 relation: Model.BelongsToOneRelation,
                 modelClass: driver,
                 join: {
-                    from: 'authorization.driverId',
-                    to: 'driver.id'
+                    from: 'Authorization.driverId',
+                    to: 'Driver.id'
                 }
             },
             ride: {
                 relation: Model.BelongsToOneRelation,
                 modelClass: vehicle,
                 join: {
-                    from: 'authorization.vehicleId',
-                    to: 'vehicle.id'
+                    from: 'Authorization.vehicleId',
+                    to: 'Vehicle.id'
                 }
                 
             }

@@ -10,8 +10,8 @@ class VehicleType extends Model {
                 relation: Model.HasManyRelation,
                 modelClass: vehicle,
                 join: {
-                    from: 'vehicleType.id',
-                    to: 'vehicle.vehicleTypeId'
+                    from: 'VehicleType.id',
+                    to: 'Vehicle.vehicleTypeId'
                 }
             }
         };
